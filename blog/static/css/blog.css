@@ -1,0 +1,317 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'IranSanse';
+}
+
+a {
+    color: #7cb9d8;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #f19047 !important;
+    
+    text-decoration: none;
+} 
+
+h1 {
+    font-size: 10px;
+    border-bottom: 1px solid #bbb;
+    padding: 0 10px 0 0;
+    font-family: 'IranSanse';
+}
+
+h2 {
+    font-size: 18px;
+    margin: 30px 0 0;
+    font-family: 'IranSanse';
+}
+h3 {
+    font-size: 18px;
+    margin: 30px 0 0;
+    font-family: 'IranSanse';
+    color: #cc0033;
+    margin: 10px;
+    margin-right: 17px;
+    font-weight: bold;
+}
+.titr{
+    font-size: 22px;
+    margin: 30px 0 0;
+    font-family: 'IranSanse';
+    color: #0a0202;
+    margin-top: 5px;
+    margin-right: 17px;
+    font-weight: bold;
+}
+a.titr:hover{
+    color: #0a0202 !important;
+}
+
+#content {
+    float: right;
+    width: 46%;
+    padding: 0 30px 0 0;
+}
+
+#sidebar {
+    float: left;
+    width: 30%;
+    padding: 10px;
+    background: #f4bed2;
+    height: 100%;
+}
+
+.sidebar-a{
+    font-size: 1.1vw;
+    /* background-color: #219b37; */
+    color: rgb(77, 3, 29);
+    padding: 3px;
+    font-family: 'IranSanse';
+    text-decoration: none;
+
+}
+.nex-pre{
+    font-size: 15px;
+    /* background-color: #219b37; */
+    color: rgb(223, 27, 99);
+    padding: 3px;
+    font-family: 'IranSanse';
+    text-decoration: none;
+}
+
+.bg2 {
+    /* background: linear-gradient(220deg, rgb(36, 130, 119) 0%, rgb(109, 231, 212) 35%, rgb(135, 197, 209) 100%); */
+    background: #fde3e9;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.bg-nav0 .topnav{
+    overflow: hidden;
+    background-color: #fde3e9;
+}
+.navbar-light {
+    background-color: #f08ba3 !important;
+    border: none !important;
+    border-width:0!important;
+}
+.se-inp{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 0;
+    
+}
+.btn-outline-success{
+   color: rgb(156, 8, 8);
+   border-color: rgb(156, 8, 8);
+}
+.btn-outline-success:hover {
+    background-color: #b68591 !important;;
+    color: rgb(247, 242, 242);
+    border-color: rgb(156, 8, 8);
+ }
+ 
+p.date {
+    color: rgb(231, 59, 162);
+    font-family: 'IranSanse';
+    font-size: 12px;
+    font-style: italic;
+    font-weight: bold;
+    padding:5px;
+    /* background-color: #cc0033; */
+    display: flex;
+    justify-content: left;
+}
+.de-date{
+    margin: 1px;
+    padding:1px;
+    display: flex;
+    justify-content: right !important;
+}
+.input-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.helper-text {
+    font-size: 16px;
+    color: #781212;
+    background-color: #fdfbfb;
+}
+.big-text{
+    height: 200px;
+}
+
+
+/* pagination */
+.pagination {
+    margin: 40px 0;
+    font-weight: bold;
+}
+
+/* forms */
+label {
+    float: left;
+    clear: both;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+input,
+textarea {
+    clear: both;
+    float: left;
+    margin: 0 0 10px;
+    background: #ededed;
+    border: 0;
+    padding: 6px 10px;
+    font-size: 12px;
+}
+
+input[type=submit] {
+    font-weight: bold;
+    background: #00abff;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.errorlist {
+    color: #cc0033;
+    float: left;
+    clear: both;
+    padding-left: 10px;
+}
+
+/* comments */
+.comment {
+    padding: 10px;
+    width: 100%;
+}
+
+.comment:nth-last-child(even) {
+    border-top:3px solid rgba(130, 62, 62, 0.593);
+    border-bottom: 3px solid rgba(130, 62, 62, 0.593);
+    
+    
+}
+
+.comment .info {
+    font-weight: bold;
+    font-size: 12px;
+    color: #666;
+}
+
+.rss-btn {
+    color: #186f0e;
+    font-weight: bold;
+    align-items: center;
+    margin-top: 20px;
+    justify-content: right;
+    display: flex;
+
+}
+
+
+.rss-btn:hover {
+    color: #ff7b00;
+}
+
+.post-bodyg {
+    color: rgb(113, 121, 115);
+    font-size: 15px;
+    font-family: 'IranSanse';
+    padding: 0px;
+    /* background-color: #9b2151; */
+}
+
+.post_de{
+    color: rgb(26, 5, 9);
+}
+a.post-title{
+    font-size: 18px;
+    /* background-color: #219b37; */
+    color: rgb(3, 77, 33);
+    padding: 3px;
+    font-family: 'IranSanse';
+    text-decoration: none;
+}
+a.sendtof{
+    color: #c94278 ;
+    font-weight: bold;
+}
+a.referpost{
+    color: #446510;
+
+}
+/* p.post-title:hover {
+    color: rgb(117, 169, 44);
+    text-decoration: none;
+} */
+p.post-title{
+    font-size: 18px;
+    color: rgb(77, 3, 38);
+    padding: 3px;
+    margin-top: 15px;
+    font-family: 'IranSanse';
+    text-decoration: none;
+}
+.detail-bar{
+    display: right;
+    /* display: inline-block; */
+    justify-content: space-evenly;
+}
+
+/* a.postq:hover{
+    background-color: #55656d;
+    color: rgb(169, 44, 96);
+    font-family: 'IranSanse';
+    text-decoration: none;
+} */
+.tags{
+    font-size: 13px;
+    text-decoration: none;
+    color: rgb(208, 108, 20) !important;
+    /* background-color: #21259b; */
+    font-family: 'IranSanse';
+  
+}
+
+/* Style the navbar */
+#navbar {
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  /* Navbar links */
+  #navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+  }
+  
+  /* Page content */
+  .content {
+    padding: 16px;
+  }
+  
+  /* The sticky class is added to the navbar with JS when it reaches its scroll position */
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+  .sticky + .content {
+    padding-top: 60px;
+  }

@@ -1,0 +1,178 @@
+{% load static %}
+{% load blog_tags %}
+<!DOCTYPE html>
+<html dir="rtl">
+
+<head>
+  <title>{% block title %}{% endblock %}</title>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
+
+
+  <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.5.3/css/bootstrap.min.css"
+    integrity="sha384-JvExCACAZcHNJEc7156QaHXTnQL3hQBixvj5RV5buE7vgnNEzzskDtx9NQ4p6BJe" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.rtlcss.com/bootstrap/v4.5.3/js/bootstrap.bundle.min.js"
+    integrity="sha384-40ix5a3dj6/qaC7tfz0Yr+p9fqWLzzAXiwxVLt9dw7UjQzGYw6rWRhFAnRapuQyK"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.3/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+
+  <link type="text/css" href="{% static 'css/blog.css' %}" rel="stylesheet">
+
+  <style>
+    @font-face {
+      font-family: 'IranSanse';
+      src: local('IranSanse'),
+      url('{% static "fonts/eot/IRANSansWeb.eot" %}') format('eot'),
+      url('{% static "fonts/ttf/IRANSansWeb.ttf" %}') format('ttf'),
+      url('{% static "fonts/woff/IRANSansWeb.woff" %}') format('woff'),
+      url('{% static "fonts/woff2/IRANSansWeb.woff2" %}') format('woff2');
+    }
+  </style>
+</head>
+
+
+
+<body class="bg2">
+
+
+   <nav id="navbar_top" class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand titr" href="{% url 'blog:post_list' %}">
+          اقتصاد فردا
+        </a>
+      </nav>
+
+    <ul class="navbar-nav mr-auto">
+    </ul>
+    <!-- <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2 se-inp" type="search" placeholder="جستجو" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">جستجو</button>
+    </form> -->
+    <form class="form-inline my-2 my-lg-0" method="get" action="{% url 'blog:post_search' %}">
+      <input class="form-control mr-sm-2 se-inp" type="search" name="query" placeholder="جستجو" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">جستجو</button>
+  </form>
+   </nav>
+ 
+
+
+
+
+  <!-- <div class="topnav">
+  <div id="navbar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light  ">
+      <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand titr" href="{% url 'blog:post_list' %}">
+      اقتصاد فردا
+    </a>
+  </nav>
+    <ul class="navbar-nav mr-auto">
+
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2 se-inp" type="search" placeholder="جستجو" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">جستجو</button>
+    </form>
+    </nav>
+  </div>
+  </div> -->
+  
+
+  <!-- <div class="topnav">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top ">
+      <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand titr" href="{% url 'blog:post_list' %}">
+          <img src="" width="30" height="30" class="d-inline-block align-top" alt="">
+          اقتصاد فردا
+        </a>
+      </nav>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2 se-inp" type="search" placeholder="جستجو" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">جستجو</button>
+        </form>
+      </div>
+    </nav>
+  </div> -->
+
+  <div id="sidebar">
+
+    <h3>آخرین اخبار</h3>
+    {% show_latest_posts 3 %}
+    <br>
+    <h3>بیشترین نظرات</h3>
+    {% get_most_commented_posts as most_commented_posts %}
+    <ul>
+      {% for post in most_commented_posts %}
+      <li>
+        <a  class="sidebar-a" href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+    <div id="content">
+      <p>
+        <a  href="{% url 'blog:post_feed' %}" class="rss-btn"><i class="bi bi-rss"></i> RSS</a>
+      </p>
+    </div>
+  </div>
+  <div id="content">
+    {% block content %}
+    {% endblock %}
+  </div>
+<!-- 
+  <script>
+    // When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
+
+// Get the navbar
+var navbar = document.getElementById("navbar");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+  </script> -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+  window.addEventListener('scroll', function() {
+      if (window.scrollY > 90) {
+        document.getElementById('navbar_top').classList.add('fixed-top');
+        // add padding top to show content behind navbar
+        navbar_height = document.querySelector('.navbar').offsetHeight;
+        document.body.style.paddingTop = navbar_height + 'px';
+      } else {
+        document.getElementById('navbar_top').classList.remove('fixed-top');
+         // remove padding top from body
+        document.body.style.paddingTop = '0';
+      } 
+  });
+}); 
+  </script>
+</body>
+
+</html>

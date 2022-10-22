@@ -1,0 +1,38 @@
+{% extends "blog/base.html" %}
+{% load blog_tags %}
+{% block title %}Search{% endblock %}
+{% block content %}
+
+    {% if query %}
+        <!-- <h1>Posts containing "{{ query }}"</h1> -->
+        <h3>
+            {% with results.count as total_results %}
+                 {{ total_results }} نتیجه  یافت شد.
+                <!-- Found {{ total_results }} result {{ total_results|pluralize}} -->
+            {% endwith %}
+        </h3>
+        {% for post in results %}
+            <h4><a href="{{ post.get_absolute_url}}">{{post.title}}</a></h4>
+            {{ post.body | markdown|truncatewords_html:5}}
+        {% empty %}
+            <p> نتیجه‌ای یافت نشد! </p>
+        {% endfor %}
+        <p><a href="{% url 'blog:post_search' %}">جستجو</a></p>
+    {% else %}
+    <br><br>
+        <!-- <h1> Search for posts</h1> -->
+        <!-- <form method="get">
+            {{ form.as_p}}
+            <input type="submit" value="Search">
+        </form> -->
+
+        <form class="form-inline my-2 my-lg-0" method="get">
+            <input class="form-control mr-sm-2 se-inp" type="search" name="query" placeholder="جستجو" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" value="Search" type="submit">جستجو</button>
+        </form> 
+    {% endif %}
+
+
+
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "blog/base.html" %}
+
+{% block title %}ارسال به یک دوست{% endblock %}
+
+{% block content %}
+  {% if sent %}
+    <h1>ایمیل با موفقیت ارسال شد.</h1>
+    <p>
+      "{{ post.title }}" ارسال شد به {{ form.cleaned_data.to }}.
+    </p>
+  {% else %}
+    <p class="post-title">اشتراک گذاری &nbsp "{{ post.title }}" &nbsp از طریق ایمیل</p>
+    <form method="post">
+      <!-- {{ form.as_p }} -->
+      {% csrf_token %}
+      <!-- <input type="submit" value="Send e-mail"> -->
+      <div class="input-container">
+        <label for="">نام</label>
+        <input class="helper-text" required type="text" name="name" id="id_work">
+    </div>
+    <div class="input-container">
+      <label for="">ایمیل</label>
+      <input class="helper-text" required type="text" name="email" id="id_work">
+    </div>
+    <div class="input-container">
+      <label for="">ارسال به </label>
+      <input class="helper-text" required type="text" name="email" id="id_work">
+    </div>
+    <div class="input-container">
+      <label for="">متن</label>
+      <textarea class="helper-text " required type="text" name="body" id="txtArea" rows="10" cols="70"></textarea>
+    </div>
+    <button class="btn btn-outline-success my-2 my-sm-0 " type="submit" value="Send e-mail">ارسال پست</button>
+    <br>
+
+    </form>
+  {% endif %}
+{% endblock %}
